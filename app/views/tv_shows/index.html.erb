@@ -4,14 +4,32 @@
 <%= link_to 'go back to welcome page', welcome_path %>
 <br><br>
 
-
+<div class="row">
+  <div class="col-6">
 <h3>Ingrese una serie o película nueva</h3>
 
 <%= form_with model: TvShow.new do |form| %>
-    <%= form.text_field :name %><br>
-    <%= form.text_area :summary %><br>
-    <%= form.date_field :release_date %><br>
-    <%= form.number_field :rating, step: '0.1' %><br>
-    <%= form.submit  "Enviar" %>
+  <div class="form-check">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-check">
+    <%= form.label :summary %>
+    <%= form.text_area :summary, class: 'form-control' %>
+      </div>
+  <div class="form-check">
+    <%= form.label :release_date %>
+    <%= form.date_field :release_date, class: 'form-control'%>
+  </div>
+  <div class="form-check">
+    <%= form.label :rating %> 
+    <%= form.number_field :rating, step: '0.1', class: 'form-control'%>
+  </div>
+    <%= form.submit  "Enviar", class: "btn btn-success mt-3" %>
 <% end %>
+  </div>
+  </div>
+
+<br><br>
+
 
